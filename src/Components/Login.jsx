@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProviders';
 
 const Login = () => {
+
+
+    const {signIn} = useContext(AuthContext);
 
     const handleLogin = (event) => {
         event.preventDefault();
@@ -10,6 +14,15 @@ const Login = () => {
         const password = form.password.value;
 
         console.log(email, password);
+
+        signIn(email, password)
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        })
 
     }
 
@@ -37,14 +50,14 @@ const Login = () => {
                                 <Link to="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                             <label className="label">
-                        <Link to="/register" className="label-text-alt link link-hover">Do not have an account?</Link>
-                    </label>
+                                <Link to="/register" className="label-text-alt link link-hover">Do not have an account?</Link>
+                            </label>
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
-                    
+
                 </div>
             </div>
         </div>
