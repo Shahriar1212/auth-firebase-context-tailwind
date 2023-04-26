@@ -17,14 +17,15 @@ const Header = () => {
             <div className="navbar bg-primary text-primary-content">
                 <Link className="btn btn-ghost normal-case text-xl">Auth Master</Link>
                 <Link to="/" className="btn btn-ghost normal-case text-xl">Home</Link>
-                <Link to="/Login" className="btn btn-ghost normal-case text-xl">Login</Link>
-                <Link to="/Register" className="btn btn-ghost normal-case text-xl">Register</Link>
+                <Link to="/login" className="btn btn-ghost normal-case text-xl">Login</Link>
+                <Link to="/register" className="btn btn-ghost normal-case text-xl">Register</Link>
+                <Link to="/orders" className="btn btn-ghost normal-case text-xl">Orders</Link>
             
                 {
                     user ? <div>
-                       <span>{user.email}</span> 
+                       <span>{user && user.email}</span> 
                        <button className="btn btn-xs" onClick={handleLogOut}>Sigh Out</button>
-                    </div> : <Link to="/login">Login</Link>
+                    </div> : <></>
                 }
             </div>
         </div>
