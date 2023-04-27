@@ -7,7 +7,11 @@ const Home = () => {
     console.log(user);
     return (
         <div>
-            <h2>user = {user && <span>{user.displayName}</span>}</h2>
+            {
+                user && <div>
+                    <h1>User : {user.email}</h1>
+                </div>
+            }
         </div>
     );
 };

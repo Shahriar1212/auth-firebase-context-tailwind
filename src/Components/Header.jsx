@@ -19,6 +19,9 @@ const Header = () => {
                 <Link to="/" className="btn btn-ghost normal-case text-xl">Home</Link>
                 <Link to="/login" className="btn btn-ghost normal-case text-xl">Login</Link>
                 <Link to="/register" className="btn btn-ghost normal-case text-xl">Register</Link>
+                {
+                    user && <Link to="/profile" className="btn btn-ghost normal-case text-xl">Profile</Link>
+                }
                 <Link to="/orders" className="btn btn-ghost normal-case text-xl">Orders</Link>
             
                 {
